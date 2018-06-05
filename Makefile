@@ -21,3 +21,4 @@ deploy: publish
 
 clean:
 	-rm -f $(CT).wasm $(CT).wast $(CT).abi
+

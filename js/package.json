@@ -1,0 +1,9 @@
+{
+  "name": "players",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "eosjs": "^14.1.0"
+  }
+}

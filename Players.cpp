@@ -107,14 +107,12 @@ namespace Oasis {
 
             //@abi action
             void countplayers() {
-              require_auth(_self);
+            //   require_auth(_self);
               uint32_t i = 0;
               playerIndex players(_self, _self);
               auto itr = players.begin();
               // eosio_assert(itr != players.end(), "No value in table: 0");
               if(itr != players.end()) {
-                i = 0;
-              } else {
                 while (itr != players.end()) {
                   i++;
                   itr++;
@@ -136,8 +134,15 @@ namespace Oasis {
             //@abi action
             void listplayers() {
               require_auth(_self);
-              playerIndex players(_self, _self);
-              print("Player list: ");
+              playerIndex players(_self, _self);  
+              auto itr = players.begin();            
+              if(itr != players.end()) {
+                while (itr != players.end()) {
+                    print(" ", itr->account_name, ":", itr->username);
+                    itr++;
+                }
+              } 
+
             }
 
             //@abi action
